@@ -1,0 +1,11 @@
+# lokalne nastavitve Claude Code
+.claude/settings.local.json
+# generirane datoteke
+predstavitve/src/build/
+__pycache__/
+.DS_Store
+# umaknjeno, ni za predstavitve
+predstavitve/src/arhiv/
+# izhod skilla, če ga poženeš v tej mapi
+components-guide/
+WEBFLOW-PROJECT.md

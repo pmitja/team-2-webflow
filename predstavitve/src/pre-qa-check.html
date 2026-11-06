@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="sl">
+<head>
+<meta charset="utf-8">
+<title>Pre-QA Check — Flowout Team 2</title>
+<link rel="stylesheet" href="deck.css">
+<style>
+  /* cover visual */
+  .cv { position: absolute !important; right: 80px; top: 168px; width: 660px; height: 600px; }
+  .cv .bw { position: absolute; width: 520px; }
+  .cv .back { left: 0; top: 0; transform: rotate(-4deg); opacity: .55; }
+  .cv .front { right: 0; top: 70px; }
+  .nav { display: flex; justify-content: space-between; align-items: center; }
+  .nav .links { display: flex; gap: 10px; }
+  .legend { display: grid; gap: 0; }
+  .legend > div { display: grid; grid-template-columns: 46px 1fr; gap: 16px; padding: 20px 0; border-top: 1px solid var(--line); align-items: start; }
+  .legend > div:last-child { border-bottom: 1px solid var(--line); }
+  .legend .pin { position: static; }
+  .legend h3 { font-size: 22px; margin-bottom: 4px; }
+  .legend p { font-size: 18px; }
+  .nope { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+  .nope .lb { font-size: 14px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--slate-2); margin-right: 8px; }
+  .nope span.x { font-size: 16px; padding: 8px 14px; border-radius: 100px; border: 1px solid var(--line); color: var(--slate); text-decoration: line-through; text-decoration-color: var(--slate-2); }
+  .nxt { display: flex; flex-direction: column; justify-content: space-between; background: var(--navy); border-radius: 24px; padding: 48px 48px 40px; color: #fff; position: relative; overflow: hidden; }
+  .nxt::after { content: ""; position: absolute; width: 420px; height: 420px; right: -160px; top: -200px; background: radial-gradient(circle, rgba(153,102,255,.45), transparent 65%); }
+  .nxt .eyebrow { color: var(--purple-2); }
+  .nxt .it { display: grid; grid-template-columns: 52px 1fr; gap: 22px; padding: 30px 0; border-top: 1px solid var(--navy-line); position: relative; z-index: 1; }
+  .nxt .ic { background: rgba(153,102,255,.16); color: var(--purple-2); }
+  .nxt h3 { color: #fff; font-size: 24px; margin-bottom: 6px; }
+  .nxt p { color: var(--on-dark-2); font-size: 19px; }
+  .ticket .it { font-size: 19px; padding: 20px 28px; }
+</style>
+</head>
+<body>
+
+<!-- 1 Cover -->
+<section class="slide dark glow">
+  {{hd}}
+  <div class="fill" style="max-width:760px">
+    <div class="eyebrow">Claude Code skill · 01</div>
+    <h1>Pre-QA<br><em>Check</em></h1>
+    <p class="lead mt-m" style="max-width:640px">Vizualni in copy pregled Webflow strani glede na Figma dizajn, še preden gre stran v QA.</p>
+    <div class="mt-l"><span class="mono" style="font-size:20px;padding:14px 22px;border-radius:12px;background:rgba(153,102,255,.16);color:#D6C4FF;border:1px solid rgba(153,102,255,.35)">/pre-qa-check &lt;url&gt; + figma export</span></div>
+  </div>
+  <div class="cv">
+    <div class="bw back"><span class="tagl">Figma</span>
+      <div class="bar"><i></i><i></i><i></i></div>
+      <div class="pg-body">
+        <div class="nav"><div class="wf d" style="width:64px;height:12px"></div><div class="links"><div class="wf" style="width:36px;height:8px"></div><div class="wf" style="width:36px;height:8px"></div><div class="wf p" style="width:56px;height:18px;border-radius:5px"></div></div></div>
+        <div class="wf d" style="width:72%;height:22px;margin-top:34px"></div>
+        <div class="wf d" style="width:48%;height:22px;margin-top:10px"></div>
+        <div class="wf" style="width:84%;height:9px;margin-top:20px"></div>
+        <div class="wf" style="width:62%;height:9px;margin-top:8px"></div>
+        <div class="wf p" style="width:130px;height:34px;margin-top:22px;border-radius:8px"></div>
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:30px"><div class="wf" style="height:96px"></div><div class="wf" style="height:96px"></div><div class="wf" style="height:96px"></div></div>
+      </div>
+    </div>
+    <div class="bw front"><span class="tagl pu">Live</span>
+      <div class="bar"><i></i><i></i><i></i><span class="url">projekt.webflow.io/stran</span></div>
+      <div class="pg-body">
+        <div class="nav"><div class="wf d" style="width:64px;height:12px"></div><div class="links"><div class="wf" style="width:36px;height:8px"></div><div class="wf" style="width:36px;height:8px"></div><div class="wf p" style="width:56px;height:18px;border-radius:5px"></div></div></div>
+        <div class="wf d" style="width:72%;height:22px;margin-top:34px"></div>
+        <div class="wf d" style="width:48%;height:22px;margin-top:10px"></div>
+        <div class="wf" style="width:84%;height:9px;margin-top:20px;background:#FFC2CE"></div>
+        <div class="wf" style="width:62%;height:9px;margin-top:8px"></div>
+        <div class="wf c" style="width:88px;height:28px;margin-top:22px;border-radius:8px"></div>
+        <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:30px"><div class="wf" style="height:96px"></div><div class="wf" style="height:96px"></div></div>
+        <span class="pin" style="left:-14px;top:104px">1</span>
+        <span class="pin" style="left:118px;top:150px">2</span>
+        <span class="pin" style="right:-14px;top:218px">3</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 2 Problem -->
+<section class="slide">
+  {{hd}}
+  <div class="split l">
+    <div>
+      <div class="eyebrow">Problem</div>
+      <h2>QA lovi napake, ki bi jih opazil <em>v petih sekundah</em>.</h2>
+      <p class="lead mt-m">Vsaka očitna napaka pomeni nov krog: ticket, popravek in ponoven pregled. Te napake lahko ujamemo že prej.</p>
+    </div>
+    <div class="pts">
+      <div><span class="ic">{{i:copy}}</span><div><h3>Besedilo z druge strani</h3><p>Odstavek, prekopiran s podobne strani, ostane na novi. Ker je videti pravilno, ga oko hitro spregleda.</p></div></div>
+      <div><span class="ic">{{i:missing}}</span><div><h3>Manjkajoči elementi</h3><p>Gumb, vrstica pod formo ali "Show more" se izgubi med gradnjo in ga nihče ne pogreša do QA.</p></div></div>
+      <div><span class="ic">{{i:loop}}</span><div><h3>Povratki stanejo čas</h3><p>Developer in QA si stran podajata, dokler niso odpravljene tudi najbolj osnovne napake.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 3 How it works -->
+<section class="slide soft">
+  {{hd}}
+  <div class="eyebrow">Kako deluje</div>
+  <h2>Odpre stran, jo posname po sekcijah in <em>primerja z dizajnom</em>.</h2>
+  <div class="fill">
+    <div class="pipe">
+      <div class="st"><div class="node">{{i:frame}}</div><div class="num">01</div><h3>Prebere dizajn</h3><p>Desktop export iz Figme kot sliko ali PDF. Mobile export je opcijski.</p></div>
+      <div class="st"><div class="node">{{i:browser}}</div><div class="num">02</div><h3>Odpre stran</h3><p>V vgrajenem brskalniku na 1440 px jo posname od vrha do dna, po sekcijah.</p></div>
+      <div class="st"><div class="node">{{i:compare}}</div><div class="num">03</div><h3>Primerja</h3><p>Postavitev sekcijo za sekcijo, besedilo pa vrstico za vrstico.</p></div>
+      <div class="st"><div class="node">{{i:doc}}</div><div class="num">04</div><h3>Vrne poročilo</h3><p>Dve sekciji: vizualni in copy popravki. Mobile na 375 px, če je export priložen.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 4 What it reports -->
+<section class="slide">
+  {{hd}}
+  <div class="eyebrow">Kaj prijavi</div>
+  <h2>Samo tisto, kar je <em>vidno mimo</em>.</h2>
+  <div class="split r" style="gap:72px;margin-top:8px">
+    <div class="bw" style="margin-left:14px">
+      <div class="bar"><i></i><i></i><i></i><span class="url">projekt.webflow.io/stran</span></div>
+      <div class="pg-body" style="padding:30px 34px">
+        <div class="nav"><div class="wf d" style="width:80px;height:14px"></div><div class="links"><div class="wf" style="width:46px;height:9px"></div><div class="wf" style="width:46px;height:9px"></div><div class="wf" style="width:46px;height:9px"></div><div class="wf p" style="width:76px;height:22px;border-radius:6px"></div></div></div>
+        <div style="display:grid;grid-template-columns:1.2fr 1fr;gap:28px;margin-top:34px;align-items:center">
+          <div>
+            <div class="wf d" style="width:92%;height:24px"></div>
+            <div class="wf d" style="width:64%;height:24px;margin-top:10px"></div>
+            <div class="wf" style="width:96%;height:10px;margin-top:20px"></div>
+            <div class="wf" style="width:78%;height:10px;margin-top:8px;background:#FFC2CE"></div>
+            <div class="wf c" style="width:110px;height:32px;margin-top:22px;border-radius:8px"></div>
+          </div>
+          <div class="wf" style="height:170px;border:2px dashed #FFB3C1;background:#FFF5F7"></div>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:30px"><div class="wf" style="height:80px"></div><div class="wf" style="height:80px"></div></div>
+        <span class="pin" style="right:28px;top:60px">1</span>
+        <span class="pin" style="left:180px;top:280px">2</span>
+        <span class="pin" style="left:6px;top:208px">3</span>
+        <span class="pin" style="left:40px;top:150px">4</span>
+      </div>
+    </div>
+    <div class="legend">
+      <div><span class="pin">1</span><div><h3>Manjka ali je odveč</h3><p>Sekcija, slika, gumb ali vrstica teksta.</p></div></div>
+      <div><span class="pin">2</span><div><h3>Drugačna postavitev</h3><p>Npr. 2 stolpca namesto 3, slika na napačni strani.</p></div></div>
+      <div><span class="pin">3</span><div><h3>Napačen copy</h3><p>Tipkarske napake, placeholder, tekst z druge strani.</p></div></div>
+      <div><span class="pin">4</span><div><h3>Barva, font, gumb</h3><p>Očitno napačna barva, velikost naslova ali oznaka gumba.</p></div></div>
+    </div>
+  </div>
+  <div class="nope mt-m">
+    <span class="lb">Ne prijavi</span>
+    <span class="x">razlike nekaj pikslov</span><span class="x">renderiranje fontov</span><span class="x">animacije in hover</span><span class="x">SEO in performance</span><span class="x">dinamična CMS vsebina</span>
+  </div>
+</section>
+
+<!-- 5 Usage -->
+<section class="slide dark">
+  {{hd}}
+  <div class="split" style="gap:72px">
+    <div>
+      <div class="eyebrow">Uporaba</div>
+      <h2 style="font-size:56px">En ukaz, URL in <em>export iz Figme</em>.</h2>
+      <div class="pts mt-m">
+        <div style="grid-template-columns:56px 1fr;padding:20px 0"><span class="k">01</span><p>V Claude Code napišeš <code>/pre-qa-check</code> in prilepiš URL strani.</p></div>
+        <div style="grid-template-columns:56px 1fr;padding:20px 0"><span class="k">02</span><p>Priložiš desktop export iz Figme, po želji še mobile.</p></div>
+        <div style="grid-template-columns:56px 1fr;padding:20px 0"><span class="k">03</span><p>Če je stran pod geslom, ga vpišeš sam v Browser panelu.</p></div>
+      </div>
+    </div>
+    <div class="win">
+      <div class="bar"><i></i><i></i><i></i><span>CLAUDE CODE</span></div>
+      <div class="body">
+        <div><span class="p">❯</span> <span class="h">/pre-qa-check</span> projekt.webflow.io/stran</div>
+        <div class="c">  ⎿ desktop.pdf · mobile.png</div>
+        <br>
+        <div><span class="g">✓</span> <span class="c">Stran odprta na 1440 px</span></div>
+        <div><span class="g">✓</span> <span class="c">8 sekcij primerjanih z dizajnom</span></div>
+        <div><span class="g">✓</span> <span class="c">Besedilo primerjano</span></div>
+        <br>
+        <div class="h">## Vizualni popravki</div>
+        <div>- <span class="h">Hero</span> — gumb je moder, v dizajnu črn.</div>
+        <br>
+        <div class="h">## Copy popravki</div>
+        <div>- <span class="h">Hero CTA</span> — <span class="r">"Schedule a Demo"</span></div>
+        <div>  → <span class="g">"Get a demo"</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 6 Result numbers -->
+<section class="slide dark glow">
+  {{hd}}
+  <div class="eyebrow">Pravi primer · Nightfall, AI-native companies</div>
+  <h2>En pregled strani je pred QA našel <em>20 popravkov</em>.</h2>
+  <div class="fill">
+    <div class="row c3" style="gap:64px">
+      <div class="stat"><div class="v">7</div><div class="l">vizualnih popravkov: forma, hero, FAQ, navigacija</div></div>
+      <div class="stat"><div class="v" style="color:var(--cyan)">13</div><div class="l">copy popravkov: CTA-ji, labele, začetnice</div></div>
+      <div class="stat"><div class="v" style="color:var(--red)">1</div><div class="l">kritičen: odstavek, ostal s healthcare strani</div></div>
+    </div>
+    <div class="sbar mt-l"><i style="flex:7;background:var(--purple)"></i><i style="flex:12;background:var(--cyan)"></i><i style="flex:1;background:var(--red)"></i></div>
+    <p class="mt-s" style="font-size:17px;color:var(--on-dark-3)">Samo desktop (1440 px). Pregledani hero, vsebinske sekcije, forma, FAQ, navigacija in footer.</p>
+  </div>
+</section>
+
+<!-- 7 Report -->
+<section class="slide soft">
+  {{hd}}
+  <div class="eyebrow">Iz poročila</div>
+  <h2>Najdbe, ki bi jih QA sicer vrnil.</h2>
+  <div class="row c2 fill" style="gap:28px;align-items:start;grid-template-columns:1fr 1fr;display:grid;align-content:center;margin-top:28px">
+    <div class="ticket">
+      <div class="th"><span class="ic cy" style="width:36px;height:36px;border-radius:10px">{{i:type}}</span><h4>Copy popravki</h4><span class="n">13</span></div>
+      <div class="it"><span class="w">Expert, odstavek<br><span class="badge" style="margin:8px 0 0">Kritično</span></span><span>"…at <span class="old">health systems and digital health companies like yours</span> <span class="new">AI labs and AI-native startups</span>. Most teams see their first real <span class="old">PHI</span> detection the same day."</span></div>
+      <div class="it"><span class="w">Hero CTA</span><span><span class="old">Schedule a Demo</span> → <span class="new">Get a demo</span></span></div>
+      <div class="it"><span class="w">Forma, gumb</span><span><span class="old">Submit</span> → <span class="new">Get a demo</span></span></div>
+      <div class="it"><span class="w">CTA-ji (6×)</span><span><span class="old">Talk To Our Security Team</span> → <span class="new">Talk to our security team</span></span></div>
+    </div>
+    <div class="ticket">
+      <div class="th"><span class="ic" style="width:36px;height:36px;border-radius:10px">{{i:eye}}</span><h4>Vizualni popravki</h4><span class="n">7</span></div>
+      <div class="it"><span class="w">Hero</span><span>Skozi prvo vrstico odstavka gre tanka črta iz ilustracije.</span></div>
+      <div class="it"><span class="w">Forma</span><span>"Company headcount" in "Company country" sta drug pod drugim, v dizajnu v isti vrstici.</span></div>
+      <div class="it"><span class="w">Forma</span><span>Namesto dropdowna je seznam štirih checkboxov.</span></div>
+      <div class="it"><span class="w">Forma</span><span>Gumb je majhen in na sredini, v dizajnu čez celo širino.</span></div>
+      <div class="it"><span class="w">FAQ</span><span>Manjka gumb "Show More".</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- 8 Benefits + next -->
+<section class="slide">
+  {{hd}}
+  <div class="split" style="grid-template-columns:1.05fr .95fr;gap:64px;align-items:stretch;margin-top:-8px">
+    <div style="display:flex;flex-direction:column">
+      <div class="eyebrow">Prednosti</div>
+      <h2 style="font-size:54px">Manj krogov med developerjem in QA.</h2>
+      <div class="row c2 end" style="gap:40px 36px">
+        <div class="feat"><span class="ic">{{i:check}}</span><h3>Manj povratkov</h3><p>Očitne napake popraviš, preden jih QA sploh vidi.</p></div>
+        <div class="feat"><span class="ic cy">{{i:clock}}</span><h3>Nekaj minut</h3><p>Pregled cele strani namesto ročnega primerjanja.</p></div>
+        <div class="feat"><span class="ic cy">{{i:type}}</span><h3>Copy proti dizajnu</h3><p>Najde tekst z drugih strani, ki ga oko spregleda.</p></div>
+        <div class="feat"><span class="ic">{{i:list}}</span><h3>Enoten format</h3><p>Poročilo takoj prilepiš v ticket.</p></div>
+      </div>
+    </div>
+    <div class="nxt">
+      <div class="eyebrow" style="position:relative;z-index:1">Naslednji koraki</div>
+      <div class="it"><span class="ic">{{i:spark}}</span><div><h3>Dizajn direktno iz Figme</h3><p>Ko je Figma MCP povezan, ročni exporti niso več potrebni.</p></div></div>
+      <div class="it"><span class="ic">{{i:bp}}</span><div><h3>Webflow breakpointi</h3><p>Pregled na 991, 767 in 479 px, ne samo na 375 px.</p></div></div>
+      <div class="it"><span class="ic">{{i:repo}}</span><div><h3>Skupen repo</h3><p>Da ima vsak v Team 2 enako verzijo skilla.</p></div></div>
+    </div>
+  </div>
+</section>
+
+</body>
+</html>

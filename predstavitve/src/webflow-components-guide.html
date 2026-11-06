@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="sl">
+<head>
+<meta charset="utf-8">
+<title>Webflow Components Guide — Flowout Team 2</title>
+<link rel="stylesheet" href="deck.css">
+<style>
+  .cvimg { position: absolute !important; right: -120px; top: 150px; width: 860px; }
+  .cvimg .bw { border-color: #24476D; }
+  .cvimg .bw .bar { background: #EEF2F6; }
+  .shot { display: block; width: 100%; border-radius: 0 0 14px 14px; }
+  .crop { height: 640px; overflow: hidden; border-radius: 0 0 14px 14px; position: relative; }
+  .crop::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 90px; background: linear-gradient(transparent, #fff); }
+  .legend { display: grid; }
+  .legend > div { display: grid; grid-template-columns: 46px 1fr; gap: 16px; padding: 17px 0; border-top: 1px solid var(--line); align-items: start; }
+  .legend > div:last-child { border-bottom: 1px solid var(--line); }
+  .legend .pin { position: static; background: var(--purple); border-color: #DCCBFF; }
+  .legend h3 { font-size: 21px; margin-bottom: 3px; }
+  .legend p { font-size: 17px; }
+  .onimg { background: var(--purple); border-color: #DCCBFF; }
+</style>
+</head>
+<body>
+
+<!-- 1 Cover -->
+<section class="slide dark glow">
+  {{hd}}
+  <div class="fill" style="max-width:620px">
+    <div class="eyebrow">Claude Code skill · 04</div>
+    <h1 style="font-size:118px">Components<br><em>Guide</em></h1>
+    <p class="lead mt-m" style="max-width:560px">Vodič po komponentah za stranko. En HTML, ki ga odpre, ko gradi nove sekcije.</p>
+    <div class="mt-l"><span class="mono" style="font-size:20px;padding:14px 22px;border-radius:12px;background:rgba(153,102,255,.16);color:#D6C4FF;border:1px solid rgba(153,102,255,.35)">/webflow-components-guide</span></div>
+  </div>
+  <div class="cvimg">
+    <div class="bw">
+      <div class="bar"><i></i><i></i><i></i><span class="url">COMPONENTS-GUIDE.html</span></div>
+      <img class="shot" src="img/guide-top.jpg" alt="">
+    </div>
+  </div>
+</section>
+
+<!-- 2 Problem -->
+<section class="slide">
+  {{hd}}
+  <div class="split l">
+    <div>
+      <div class="eyebrow">Problem</div>
+      <h2>Stranka gradi nove sekcije, <em>komponent pa ne pozna</em>.</h2>
+      <p class="lead mt-m">Po predaji projekta stranka sama dela nove strani. Brez vodiča ugiba, katero komponento vzeti in kako jo nastaviti.</p>
+    </div>
+    <div class="pts">
+      <div><span class="ic rd">{{i:link}}</span><div><h3>Unlink komponente</h3><p>Komponento odklopi, da spremeni en tekst. Od takrat ne dobiva več posodobitev.</p></div></div>
+      <div><span class="ic">{{i:tag}}</span><div><h3>Novi classi namesto variant</h3><p>Izgled spremeni z novim classom, čeprav varianta za to že obstaja.</p></div></div>
+      <div><span class="ic cy">{{i:msg}}</span><div><h3>Vprašanja za vsako sekcijo</h3><p>"Katero komponento naj vzamem za to?" Odgovarjamo enkrat v vodiču, ne vsakič posebej.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 3 What the client gets -->
+<section class="slide soft">
+  {{hd}}
+  <div class="split" style="grid-template-columns:.9fr 1.1fr;gap:72px;align-items:start;margin-top:-16px">
+    <div>
+      <div class="eyebrow">Kaj dobi stranka</div>
+      <h2 style="font-size:52px">Vsaka komponenta na <em>eni strani</em>.</h2>
+      <div class="legend mt-m">
+        <div><span class="pin">1</span><div><h3>Predogled z žive strani</h3><p>Screenshot prave komponente, ne skice.</p></div></div>
+        <div><span class="pin">2</span><div><h3>Kdaj jo uporabiti in kdaj ne</h3><p>Z linkom na boljšo komponento, če obstaja.</p></div></div>
+        <div><span class="pin">3</span><div><h3>Lastnosti v jeziku urednika</h3><p>"Besedilo na gumbu", ne "String prop".</p></div></div>
+        <div><span class="pin">4</span><div><h3>Variante, strani in nasveti</h3><p>Kdaj katero varianto in kje jo vidiš v živo.</p></div></div>
+      </div>
+    </div>
+    <div class="bw" style="margin-top:12px">
+      <div class="bar"><i></i><i></i><i></i><span class="url">COMPONENTS-GUIDE.html#cta-banner</span></div>
+      <div class="crop"><img class="shot" src="img/guide-comp.jpg" alt="" style="padding:22px 26px 0"></div>
+      <span class="pin onimg" style="left:-17px;top:200px">1</span>
+      <span class="pin onimg" style="left:-17px;top:566px">2</span>
+    </div>
+  </div>
+</section>
+
+<!-- 4 How it works -->
+<section class="slide">
+  {{hd}}
+  <div class="eyebrow">Kako deluje</div>
+  <h2>Prebere projekt, posname komponente in <em>zgradi vodič</em>.</h2>
+  <div class="fill">
+    <div class="pipe">
+      <div class="st"><div class="node">{{i:plug}}</div><div class="num">01</div><h3>Webflow MCP</h3><p>Komponente, propi, variante, število uporab in strani, kjer so.</p></div>
+      <div class="st"><div class="node">{{i:image}}</div><div class="num">02</div><h3>Screenshoti</h3><p>Vsako komponento posname z objavljene strani. Animacije in cookie bannerje umakne.</p></div>
+      <div class="st"><div class="node">{{i:type}}</div><div class="num">03</div><h3>Vsebina</h3><p>Opis, uporaba in lastnosti. Piše samo to, kar vidi v projektu.</p></div>
+      <div class="st"><div class="node">{{i:doc}}</div><div class="num">04</div><h3>HTML</h3><p>Fiksna predloga zgradi vodič. Slike so vgrajene, vse je v eni datoteki.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 5 One file -->
+<section class="slide dark glow">
+  {{hd}}
+  <div class="split" style="grid-template-columns:.8fr 1.2fr;gap:72px">
+    <div>
+      <div class="eyebrow">Rezultat</div>
+      <h2 style="font-size:64px">Ena datoteka. <em>Odpre jo vsak.</em></h2>
+      <p class="lead mt-m" style="font-size:24px">Pošlješ jo po mailu ali daš v Drive. Stranka ne rabi dostopa do ničesar.</p>
+    </div>
+    <div class="row c2" style="gap:18px">
+      <div class="feat box" style="padding:26px"><span class="ic">{{i:search}}</span><h3>Iskanje in navigacija</h3><p>Komponente po skupinah, iskanje po imenu in namenu.</p></div>
+      <div class="feat box" style="padding:26px"><span class="ic cy">{{i:target}}</span><h3>Brand stranke</h3><p>Barve in pisava iz variabel projekta.</p></div>
+      <div class="feat box" style="padding:26px"><span class="ic cy">{{i:mobile}}</span><h3>Tudi na telefonu</h3><p>Postavitev se prilagodi, tabele gredo v vrstice.</p></div>
+      <div class="feat box" style="padding:26px"><span class="ic">{{i:check}}</span><h3>Enak pri vseh strankah</h3><p>Angleščina ali slovenščina, vedno ista struktura.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 6 Usage -->
+<section class="slide">
+  {{hd}}
+  <div class="split" style="gap:72px">
+    <div>
+      <div class="eyebrow">Uporaba</div>
+      <h2 style="font-size:56px">Ob predaji projekta <em>stranki</em>.</h2>
+      <div class="pts mt-m">
+        <div style="grid-template-columns:56px 1fr;padding:20px 0"><span class="k">01</span><p>Napišeš <code>/webflow-components-guide</code>. Rabiš povezan Webflow MCP.</p></div>
+        <div style="grid-template-columns:56px 1fr;padding:20px 0"><span class="k">02</span><p>Poveš javni URL za screenshote in jezik stranke.</p></div>
+        <div style="grid-template-columns:56px 1fr;padding:20px 0"><span class="k">03</span><p>Pregledaš seznam "Za pregled" in pošlješ vodič.</p></div>
+      </div>
+    </div>
+    <div class="win">
+      <div class="bar"><i></i><i></i><i></i><span>CLAUDE CODE · PRIMER IZPISA</span></div>
+      <div class="body">
+        <div><span class="p">❯</span> <span class="h">/webflow-components-guide</span></div>
+        <br>
+        <div><span class="g">✓</span> <span class="c">26 komponent prebranih, 4 izpuščene (0 uporab)</span></div>
+        <div><span class="g">✓</span> <span class="c">22 posnetkov z objavljene strani</span></div>
+        <div><span class="g">✓</span> <span class="c">Vsebina napisana (en)</span></div>
+        <br>
+        <div class="h">components-guide/COMPONENTS-GUIDE.html</div>
+        <div class="c">  22 komponent · 6 skupin · 4.1 MB</div>
+        <br>
+        <div><span class="y">Za pregled</span></div>
+        <div>- Pricing Toggle: namen ni jasen iz propov</div>
+        <div>- Logo Wall: brez predogleda (embed)</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 7 Limits -->
+<section class="slide soft">
+  {{hd}}
+  <div class="eyebrow">Dobro je vedeti</div>
+  <h2>Kje so meje.</h2>
+  <div class="row c4 fill" style="display:grid;align-content:center;gap:24px">
+    <div class="feat box"><span class="ic">{{i:lock}}</span><h3>Javna stran</h3><p>Screenshoti delujejo samo brez gesla. Na zaščitenem stagingu vodič pokaže linke namesto slik.</p></div>
+    <div class="feat box"><span class="ic cy">{{i:image}}</span><h3>Video in embedi</h3><p>Se v posnetku včasih ne naložijo. Agent zato posnetke pregleda.</p></div>
+    <div class="feat box"><span class="ic">{{i:users}}</span><h3>Pregled developerja</h3><p>Opise piše agent. Pred pošiljanjem stranki jih potrdi developer na projektu.</p></div>
+    <div class="feat box"><span class="ic rd">{{i:alert}}</span><h3>Še ni preizkušen</h3><p>Posnetki in HTML so testirani na flowout.com, celoten tok na projektu še ne.</p></div>
+  </div>
+</section>
+
+</body>
+</html>

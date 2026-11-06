@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="sl">
+<head>
+<meta charset="utf-8">
+<title>Webflow Onboarding — Flowout Team 2</title>
+<link rel="stylesheet" href="deck.css">
+<style>
+  .cv { position: absolute !important; right: 96px; top: 176px; width: 600px; height: 580px; }
+  .cv .win { position: absolute; left: 40px; top: 70px; width: 520px; }
+  .cv .chip { position: absolute; font-size: 18px; padding: 12px 16px; }
+  .tree { font-family: 'JetBrains Mono', monospace; font-size: 21px; line-height: 1.85; color: #C9D6E3; }
+  .tree .t { color: #3E5F82; } .tree .x { color: var(--cyan); } .tree .v { color: var(--purple-2); }
+  .dup { display: grid; grid-template-columns: auto 56px auto; align-items: center; gap: 0; justify-content: start; }
+  .dup .vs { text-align: center; font-size: 28px; color: var(--slate-2); font-weight: 300; }
+  .dup + .dup { margin-top: 26px; }
+  .dup .cap { grid-column: 1 / -1; font-size: 14px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--slate-2); margin-bottom: 12px; }
+  .sw { width: 16px; height: 16px; border-radius: 4px; background: var(--purple); }
+  .verbs { display: grid; grid-template-columns: 1fr 1fr; gap: 14px 18px; font-family: 'JetBrains Mono', monospace; font-size: 22px; }
+  .verbs span { padding: 16px 20px; border-radius: 12px; display: flex; align-items: center; gap: 12px; }
+  .verbs .no { background: rgba(255,92,122,.08); border: 1px solid rgba(255,92,122,.28); color: #FF8FA3; text-decoration: line-through; text-decoration-color: rgba(255,143,163,.7); }
+  .verbs .ok { background: rgba(15,238,225,.08); border: 1px solid rgba(15,238,225,.3); color: var(--cyan); }
+  .verbs .cap { grid-column: 1 / -1; font-family: 'Inter'; font-size: 14px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--on-dark-3); padding: 0; margin-top: 10px; }
+  .doc .sec { padding: 26px 32px; border-bottom: 1px solid var(--line); }
+  .doc .sec:last-child { border-bottom: 0; }
+  .doc .h { font-size: 13px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--slate-2); margin-bottom: 14px; }
+  .doc .tree { color: var(--ink); font-size: 18px; line-height: 1.8; }
+  .doc .tree .t { color: #B5C2CF; } .doc .tree .x { color: var(--purple); font-weight: 600; }
+  .doc table td { font-size: 17px; padding: 12px 18px 12px 0; }
+  .doc table td:first-child { width: 44%; }
+</style>
+</head>
+<body>
+
+<!-- 1 Cover -->
+<section class="slide dark glow">
+  {{hd}}
+  <div class="fill" style="max-width:760px">
+    <div class="eyebrow">Claude Code skill · 02</div>
+    <h1>Webflow<br><em>Onboarding</em></h1>
+    <p class="lead mt-m" style="max-width:620px">V nekaj minutah izveš, kaj Webflow projekt že ima, preden dodaš svoj prvi class.</p>
+    <div class="mt-l"><span class="mono" style="font-size:20px;padding:14px 22px;border-radius:12px;background:rgba(153,102,255,.16);color:#D6C4FF;border:1px solid rgba(153,102,255,.35)">/webflow-onboarding</span></div>
+  </div>
+  <div class="cv">
+    <div class="win">
+      <div class="bar"><i></i><i></i><i></i><span>WEBFLOW-PROJECT.md</span></div>
+      <div class="body tree">
+        <div class="x">section_hero</div>
+        <div><span class="t">└─</span> padding-global</div>
+        <div><span class="t">&nbsp;&nbsp;&nbsp;└─</span> container-large</div>
+        <div><span class="t">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└─</span> padding-section-large</div>
+        <div><span class="t">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└─</span> <span class="v">hero_component</span></div>
+      </div>
+    </div>
+    <span class="chip" style="left:0;top:0"><span class="sw"></span>Brand / Primary</span>
+    <span class="chip" style="right:0;top:396px"><span class="d" style="background:var(--cyan)"></span>Button · 2 varianti</span>
+    <span class="chip" style="left:80px;top:470px"><span class="d"></span>Client-First</span>
+  </div>
+</section>
+
+<!-- 2 Problem -->
+<section class="slide">
+  {{hd}}
+  <div class="split l">
+    <div>
+      <div class="eyebrow">Problem</div>
+      <h2>Na tujem projektu ne veš, <em>kaj že obstaja</em>.</h2>
+      <p class="lead mt-m">Zato nastajajo podvojeni classi, barve brez variabel in nove komponente za stvari, ki jih projekt že ima.</p>
+    </div>
+    <div>
+      <div class="dup"><div class="cap">Class</div><span class="chip"><span class="d"></span>container-large</span><span class="vs">≠</span><span class="chip bad"><span class="d"></span>container-lg</span></div>
+      <div class="dup"><div class="cap">Barva</div><span class="chip"><span class="sw"></span>Brand / Primary</span><span class="vs">≠</span><span class="chip bad"><span class="sw"></span>#9966FF</span></div>
+      <div class="dup"><div class="cap">Komponenta</div><span class="chip"><span class="d" style="background:var(--cyan)"></span>Button</span><span class="vs">≠</span><span class="chip bad"><span class="d"></span>cta-button-new</span></div>
+      <p class="mt-m" style="font-size:17px;color:var(--slate-2)">Levo: obstaja v projektu. Desno: kar nastane, ko tega ne veš.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 3 What it reviews -->
+<section class="slide soft">
+  {{hd}}
+  <div class="eyebrow">Kaj pregleda</div>
+  <h2>Prebere <em>celoten design system</em>.</h2>
+  <div class="row c3 fill" style="display:grid;align-content:center;gap:24px;margin-top:32px">
+    <div class="feat box"><span class="ic">{{i:vars}}</span><h3>Globalne variable</h3><p>Kolekcije, mode (Light/Dark) in variable, ki kažejo na druge.</p></div>
+    <div class="feat box"><span class="ic cy">{{i:comp}}</span><h3>Komponente</h3><p>Število instanc, propi in variante za vsako komponento.</p></div>
+    <div class="feat box"><span class="ic">{{i:tag}}</span><h3>Naming sistem</h3><p>Iz imen classov ugotovi Client-First, Lumos ali lasten sistem.</p></div>
+    <div class="feat box"><span class="ic cy">{{i:layout}}</span><h3>Layout classi</h3><p>Section, container, padding in max-width z vrednostmi po breakpointih.</p></div>
+    <div class="feat box"><span class="ic">{{i:tree}}</span><h3>Sestava strani</h3><p>Kako je sekcija dejansko zgrajena na domači strani.</p></div>
+    <div class="feat box"><span class="ic rd">{{i:alert}}</span><h3>Opažanja</h3><p>Podvojeni classi, hardcoded barve, komponente brez instanc.</p></div>
+  </div>
+</section>
+
+<!-- 4 Read only -->
+<section class="slide dark glow">
+  {{hd}}
+  <div class="split" style="gap:96px">
+    <div>
+      <div class="eyebrow">Pravilo #1</div>
+      <h2 style="font-size:84px">Samo bere.<br><em>Nič ne spreminja.</em></h2>
+      <p class="lead mt-m">Če opazi kaj za popraviti, to samo zapiše v poročilo. Zato ga lahko varno poženeš na katerem koli projektu.</p>
+    </div>
+    <div class="verbs">
+      <span class="cap">Uporablja</span>
+      <span class="ok">get_*</span><span class="ok">list_* · query_*</span>
+      <span class="cap">Nikoli ne kliče</span>
+      <span class="no">create_*</span><span class="no">update_*</span>
+      <span class="no">rename_*</span><span class="no">delete_*</span>
+      <span class="no">publish_*</span><span class="no">insert_*</span>
+    </div>
+  </div>
+</section>
+
+<!-- 5 Output -->
+<section class="slide">
+  {{hd}}
+  <div class="split l" style="gap:72px">
+    <div>
+      <div class="eyebrow">Rezultat</div>
+      <h2 style="font-size:56px">Cheat sheet, ki ga odpreš pred <em>vsako novo sekcijo</em>.</h2>
+      <p class="lead mt-m" style="font-size:24px">Skill zapiše <code>WEBFLOW-PROJECT.md</code> v projekt. Jedro je tabela "Preden dodaš X, uporabi Y".</p>
+      <p class="mt-m" style="font-size:16px;color:var(--slate-2)">Primer za projekt s Client-First. Prave vrednosti so iz projekta, ki ga pregleduješ.</p>
+    </div>
+    <div class="ticket doc">
+      <div class="th"><span class="ic" style="width:36px;height:36px;border-radius:10px">{{i:doc}}</span><h4 style="text-transform:none;letter-spacing:0;font-family:'JetBrains Mono';font-size:16px">WEBFLOW-PROJECT.md</h4></div>
+      <div class="sec">
+        <div class="h">Kako zgraditi novo sekcijo</div>
+        <div class="tree">
+          <div class="x">section_[ime]</div>
+          <div><span class="t">└─</span> padding-global <span class="t">→</span> container-large <span class="t">→</span> padding-section-large</div>
+        </div>
+      </div>
+      <div class="sec">
+        <div class="h">Preden dodaš, uporabi raje</div>
+        <table class="tbl">
+          <tr><td>Zunanji padding sekcije</td><td><code>padding-global</code></td></tr>
+          <tr><td>Max širino vsebine</td><td><code>container-large</code> · <code>container-medium</code></td></tr>
+          <tr><td>Vertikalni razmik</td><td><code>padding-section-*</code></td></tr>
+          <tr><td>Primarno barvo</td><td>variabla <code>Brand / Primary</code></td></tr>
+          <tr><td style="border:0">Gumb</td><td style="border:0">komponenta <code>Button</code></td></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 6 Usage -->
+<section class="slide dark">
+  {{hd}}
+  <div class="split" style="gap:72px">
+    <div>
+      <div class="eyebrow">Uporaba</div>
+      <h2 style="font-size:56px">Na novem projektu ga <em>poženeš prvega</em>.</h2>
+      <div class="pts mt-m">
+        <div style="grid-template-columns:56px 1fr;padding:20px 0"><span class="k">01</span><p>Povezan mora biti Webflow MCP 2.0. Designer ni potreben.</p></div>
+        <div style="grid-template-columns:56px 1fr;padding:20px 0"><span class="k">02</span><p>Napišeš <code>/webflow-onboarding</code> ali "kaj že obstaja v webflowu".</p></div>
+        <div style="grid-template-columns:56px 1fr;padding:20px 0"><span class="k">03</span><p>Če je v workspaceu več sitov, poveš, katerega.</p></div>
+      </div>
+    </div>
+    <div class="win">
+      <div class="bar"><i></i><i></i><i></i><span>CLAUDE CODE · PRIMER IZPISA</span></div>
+      <div class="body">
+        <div><span class="p">❯</span> <span class="h">/webflow-onboarding</span></div>
+        <br>
+        <div><span class="g">✓</span> <span class="c">Variable, komponente in classi prebrani</span></div>
+        <div><span class="g">✓</span> <span class="c">Domača stran pregledana</span></div>
+        <br>
+        <div>Naming sistem  <span class="g">Client-First</span></div>
+        <div>Komponente     <span class="h">24</span></div>
+        <div>Variable       <span class="h">58</span></div>
+        <div>Classi         <span class="h">312</span></div>
+        <br>
+        <div><span class="y">!</span> container-lg podvaja container-large</div>
+        <div><span class="y">!</span> 3 barve hardcoded, variabla obstaja</div>
+        <br>
+        <div class="c">→ WEBFLOW-PROJECT.md</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 7 Limits -->
+<section class="slide">
+  {{hd}}
+  <div class="eyebrow">Dobro je vedeti</div>
+  <h2>Kje so meje.</h2>
+  <div class="row c4 fill" style="display:grid;align-content:center;gap:24px">
+    <div class="feat box"><span class="ic">{{i:search}}</span><h3>Uporaba classov</h3><p>MCP ne pove, kolikokrat je class uporabljen. Zato je najbolj zanesljiv pregled sestave strani.</p></div>
+    <div class="feat box"><span class="ic cy">{{i:comp}}</span><h3>0 instanc</h3><p>Ne pomeni nujno, da je komponenta odveč. Knjižnične se pokažejo šele, ko so postavljene.</p></div>
+    <div class="feat box"><span class="ic">{{i:clock}}</span><h3>Posnetek stanja</h3><p>Datoteka zastari. Pred novim classom ga še vedno hitro poiščeš po imenu.</p></div>
+    <div class="feat box"><span class="ic cy">{{i:stack}}</span><h3>Veliki projekti</h3><p>Pri 500+ classih pobere najprej samo imena, vrednosti pa za ključne skupine.</p></div>
+  </div>
+</section>
+
+<!-- 8 Next -->
+<section class="slide dark glow">
+  {{hd}}
+  <div class="eyebrow">Naslednji koraki</div>
+  <h2>Kako ga <em>še izboljšamo</em>.</h2>
+  <div class="row c3 fill" style="display:grid;align-content:center;gap:24px">
+    <div class="feat box"><span class="ic">{{i:plug}}</span><h3>Agent Instructions</h3><p>Cheat sheet shrani na site, da ga vsak naslednji agent ali sodelavec dobi samodejno.</p></div>
+    <div class="feat box"><span class="ic cy">{{i:target}}</span><h3>Naš standard</h3><p>Če Team 2 vedno dela v Client-First, skill preveri, ali se ga projekt drži.</p></div>
+    <div class="feat box"><span class="ic">{{i:repo}}</span><h3>Skupen repo</h3><p>Da ima vsak v Team 2 enako verzijo skilla.</p></div>
+  </div>
+  <p class="mt-s" style="font-size:17px;color:var(--on-dark-3)">Status: skill je pripravljen, prvi zagon naj bo na projektu, ki ga že poznamo.</p>
+</section>
+
+</body>
+</html>

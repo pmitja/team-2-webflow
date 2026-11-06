@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="sl">
+<head>
+<meta charset="utf-8">
+<title>Webflow Launch Audit — Flowout Team 2</title>
+<link rel="stylesheet" href="deck.css">
+<style>
+  .cv { position: absolute !important; right: 96px; top: 176px; width: 580px; }
+  .rp { background: #071D33; border: 1px solid #1B3A5C; border-radius: 16px; overflow: hidden; }
+  .rp .bar { display: flex; align-items: center; gap: 8px; padding: 14px 18px; border-bottom: 1px solid #1B3A5C; background: #0A2340; }
+  .rp .bar i { width: 11px; height: 11px; border-radius: 50%; background: #29496B; }
+  .rp .bar span { margin-left: 12px; font: 500 13px 'JetBrains Mono'; color: #6E87A0; letter-spacing: .04em; }
+  .rp .r { display: grid; grid-template-columns: 44px 1fr auto; gap: 16px; align-items: center; padding: 18px 22px; border-bottom: 1px solid #16324F; }
+  .rp .r:last-child { border-bottom: 0; }
+  .rp .r b { color: #fff; font-size: 18px; font-weight: 600; display: block; }
+  .rp .r small { color: var(--on-dark-3); font-size: 15px; }
+  .rp .ic { width: 44px; height: 44px; border-radius: 12px; }
+  .t { font: 700 11px 'Inter'; letter-spacing: .1em; text-transform: uppercase; padding: 5px 9px; border-radius: 5px; }
+  .t.k { background: var(--red); color: #fff; } .t.p { background: #FFD479; color: #3A2A00; } .t.m { background: #29496B; color: #C9D6E3; }
+  .layer { border-radius: 22px; padding: 34px 36px; }
+  .layer.api { background: var(--navy-2); border: 1px solid var(--navy-line); }
+  .layer.web { background: rgba(153,102,255,.12); border: 1px solid rgba(153,102,255,.4); }
+  .layer h3 { color: #fff; display: flex; align-items: center; gap: 14px; margin-bottom: 20px; }
+  .layer ul { list-style: none; }
+  .layer li { padding: 12px 0; border-top: 1px solid var(--navy-line); font-size: 19px; display: flex; gap: 12px; }
+  .layer.web li { border-color: rgba(153,102,255,.3); }
+  .layer li .m { font-family: 'JetBrains Mono'; font-weight: 600; width: 18px; flex: none; }
+  .plus { font-size: 56px; color: var(--on-dark-3); font-weight: 300; text-align: center; align-self: center; }
+  .aud { display: flex; flex-direction: column; gap: 14px; }
+  .aud .was { font-size: 15px; color: var(--slate-2); line-height: 1.4; padding-bottom: 14px; border-bottom: 1px solid var(--line); }
+  .aud ul { list-style: none; }
+  .aud li { font-size: 17px; line-height: 1.42; padding: 9px 0 9px 20px; position: relative; }
+  .aud li::before { content: ""; position: absolute; left: 0; top: 18px; width: 8px; height: 2px; background: var(--purple); }
+  .ticket .it { grid-template-columns: 120px 1fr; font-size: 18px; padding: 16px 28px; align-items: start; }
+  .ticket .sec { padding: 12px 28px; background: var(--bg-2); border-bottom: 1px solid var(--line); font-size: 13px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--slate-2); }
+  .ticket .fx { color: var(--purple); font-weight: 600; }
+</style>
+</head>
+<body>
+
+<!-- 1 Cover -->
+<section class="slide dark glow">
+  {{hd}}
+  <div class="fill" style="max-width:760px">
+    <div class="eyebrow">Claude Code skill · 03</div>
+    <h1>Launch<br><em>Audit</em></h1>
+    <p class="lead mt-m" style="max-width:600px">Dostopnost, linki, SEO in slike. En pregled Webflow strani, preden gre v objavo ali k stranki.</p>
+    <div class="mt-l"><span class="mono" style="font-size:20px;padding:14px 22px;border-radius:12px;background:rgba(153,102,255,.16);color:#D6C4FF;border:1px solid rgba(153,102,255,.35)">/webflow-launch-audit &lt;url&gt;</span></div>
+  </div>
+  <div class="cv">
+    <div class="rp">
+      <div class="bar"><i></i><i></i><i></i><span>NAJPREJ POPRAVI · PRIMER</span></div>
+      <div class="r"><span class="ic">{{i:a11y}}</span><div><b>Navbar dropdown</b><small>Ne odpre se s tipkovnico</small></div><span class="t k">Kritično</span></div>
+      <div class="r"><span class="ic cy">{{i:link}}</span><div><b>/pricing → /demo-old</b><small>404, nov slug je /demo</small></div><span class="t k">Kritično</span></div>
+      <div class="r"><span class="ic cy">{{i:image}}</span><div><b>Hero slika 2.4 MB</b><small>3800 px v 1200 px boxu, lazy</small></div><span class="t p">Pomembno</span></div>
+      <div class="r"><span class="ic">{{i:search}}</span><div><b>/blog brez descriptiona</b><small>Prazno SEO polje</small></div><span class="t p">Pomembno</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- 2 Problem -->
+<section class="slide">
+  {{hd}}
+  <div class="split l">
+    <div>
+      <div class="eyebrow">Problem</div>
+      <h2>Pred objavo te napake opazimo <em>prepozno</em>.</h2>
+      <p class="lead mt-m">Najpogosteje jih opazi stranka ali Google. Vse se dajo najti s pregledom, ki traja nekaj minut.</p>
+    </div>
+    <div class="pts">
+      <div><span class="ic cy">{{i:link}}</span><div><h3>Linki na staging</h3><p>Absolutni linki na <code>*.webflow.io</code>, stari slugi in anchorji brez ID-ja ostanejo na produkciji.</p></div></div>
+      <div><span class="ic">{{i:image}}</span><div><h3>Pretežke slike</h3><p>PNG z nekaj MB v majhnem boxu in hero slika z lazy loadom upočasnita stran.</p></div></div>
+      <div><span class="ic rd">{{i:a11y}}</span><div><h3>Dostopnost na komponentah</h3><p>Ena napaka v navbarju ali gumbu se ponovi na vsaki strani.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 3 API + browser -->
+<section class="slide dark">
+  {{hd}}
+  <div class="eyebrow">Zakaj nov skill</div>
+  <h2>Uradni Webflow skilli gledajo samo API. <em>Mi dodamo še brskalnik.</em></h2>
+  <div class="fill">
+    <div style="display:grid;grid-template-columns:1fr 90px 1fr;align-items:stretch">
+      <div class="layer api">
+        <h3><span class="ic">{{i:plug}}</span>Webflow MCP · API</h3>
+        <ul>
+          <li><span class="m" style="color:var(--cyan)">✓</span>SEO polja, slugi, draft strani</li>
+          <li><span class="m" style="color:var(--cyan)">✓</span>Sitemap, custom koda, fonti</li>
+          <li><span class="m" style="color:var(--cyan)">✓</span>Barvne variable in CMS alt teksti</li>
+          <li><span class="m" style="color:var(--red)">✕</span>Ne vidi strani, kot jo vidi uporabnik</li>
+        </ul>
+      </div>
+      <div class="plus">+</div>
+      <div class="layer web">
+        <h3><span class="ic cy">{{i:browser}}</span>Brskalnik · objavljena stran</h3>
+        <ul>
+          <li><span class="m" style="color:var(--cyan)">✓</span>Navbar, footer, CMS liste, custom koda</li>
+          <li><span class="m" style="color:var(--cyan)">✓</span>axe-core in test s tipkovnico</li>
+          <li><span class="m" style="color:var(--cyan)">✓</span>Dejanske velikosti in teže slik</li>
+          <li><span class="m" style="color:var(--cyan)">✓</span>Status vsakega linka s curl</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 4 What it checks -->
+<section class="slide">
+  {{hd}}
+  <div class="eyebrow">Kaj preveri</div>
+  <h2>Štiri področja, <em>en seznam popravkov</em>.</h2>
+  <div class="row c4 fill" style="display:grid;align-content:center;gap:22px;margin-top:36px">
+    <div class="feat box aud" style="padding:28px"><span class="ic">{{i:a11y}}</span><h3>Dostopnost</h3>
+      <div class="was">Uradno: labele, linki brez href, naslovi</div>
+      <ul><li>axe-core (WCAG 2 A/AA) na vsaki strani</li><li>Kontrast na barvnih variablah</li><li>Tipkovnica: focus, dropdown, modal</li><li>Popravek na komponenti, ne instanci</li></ul></div>
+    <div class="feat box aud" style="padding:28px"><span class="ic cy">{{i:link}}</span><h3>Linki</h3>
+      <div class="was">Uradno: 4xx/5xx, http://, redirecti</div>
+      <ul><li>Vsi linki, tudi v komponentah</li><li><code>*.webflow.io</code>, stari slugi, draft</li><li>Anchorji brez ID-ja</li><li><code>noopener</code>, <code>mailto:</code>, <code>tel:</code></li></ul></div>
+    <div class="feat box aud" style="padding:28px"><span class="ic">{{i:search}}</span><h3>SEO in site</h3>
+      <div class="was">Uradno: popis strani, SEO na oko</div>
+      <ul><li>Title, description, OG, canonical</li><li>Noindex proti sitemapu, 404</li><li>Podvojen GA/GTM, fonti</li><li>PageSpeed na produkciji</li></ul></div>
+    <div class="feat box aud" style="padding:28px"><span class="ic cy">{{i:image}}</span><h3>Slike</h3>
+      <div class="was">Uradno: samo alt teksti in imena</div>
+      <ul><li>Nad ~300 KB, PNG/JPG namesto WebP</li><li>Več kot 2× prevelike dimenzije</li><li>Hero slika z lazy loadom</li><li>Alt v CMS in drugih jezikih</li></ul></div>
+  </div>
+</section>
+
+<!-- 5 How it works -->
+<section class="slide soft">
+  {{hd}}
+  <div class="eyebrow">Kako deluje</div>
+  <h2>Prebere projekt, odpre stran in <em>preveri vsak link</em>.</h2>
+  <div class="fill">
+    <div class="pipe">
+      <div class="st"><div class="node">{{i:plug}}</div><div class="num">01</div><h3>Webflow MCP</h3><p>Strani, SEO polja, sitemap, custom koda, fonti in variable.</p></div>
+      <div class="st"><div class="node">{{i:browser}}</div><div class="num">02</div><h3>Brskalnik</h3><p>Do 5 glavnih strani: axe-core, tipkovnica, linki in slike.</p></div>
+      <div class="st"><div class="node">{{i:link}}</div><div class="num">03</div><h3>Preverjanje</h3><p>Status linkov s curl, PageSpeed za javno produkcijo.</p></div>
+      <div class="st"><div class="node">{{i:doc}}</div><div class="num">04</div><h3>Poročilo</h3><p>"Najprej popravi" in štiri sekcije z oznakami po pomembnosti.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 6 Report -->
+<section class="slide">
+  {{hd}}
+  <div class="split l" style="gap:72px">
+    <div>
+      <div class="eyebrow">Poročilo</div>
+      <h2 style="font-size:56px">Kje, kaj je narobe in <em>kako popraviti</em>.</h2>
+      <div class="pts mt-m">
+        <div style="grid-template-columns:150px 1fr;padding:18px 0"><span><span class="t k">Kritično</span></span><p>Pokvari uporabo, SEO ali dostopnost.</p></div>
+        <div style="grid-template-columns:150px 1fr;padding:18px 0"><span><span class="t p">Pomembno</span></span><p>Popraviti pred predajo stranki.</p></div>
+        <div style="grid-template-columns:150px 1fr;padding:18px 0"><span class="muted" style="font-size:15px;padding-top:4px">brez oznake</span><p>Manjše, ko je čas.</p></div>
+      </div>
+      <p class="mt-s" style="font-size:16px;color:var(--slate-2)">Primer formata. Ocene 0–100 ni.</p>
+    </div>
+    <div class="ticket">
+      <div class="th"><span class="ic" style="width:36px;height:36px;border-radius:10px">{{i:doc}}</span><h4>Launch audit</h4><span class="n">5 strani</span></div>
+      <div class="sec">Dostopnost</div>
+      <div class="it"><span><span class="t k">Kritično</span></span><span><b>Navbar (komponenta)</b> — dropdown se ne odpre s tipkovnico. <span class="fx">→ Dodaj odpiranje z Enter in zapiranje z Esc.</span></span></div>
+      <div class="it"><span></span><span><b>Footer</b> — kontrast sivega teksta 3.1:1. <span class="fx">→ Potemni variablo <code>Text / Muted</code>.</span></span></div>
+      <div class="sec">Linki</div>
+      <div class="it"><span><span class="t k">Kritično</span></span><span><b>/pricing</b> — "Book a demo" vodi na /demo-old (404). <span class="fx">→ Nov slug je /demo.</span></span></div>
+      <div class="sec">Slike</div>
+      <div class="it"><span><span class="t p">Pomembno</span></span><span><b>Hero</b> — hero.png 2.4 MB, 3800 px v 1200 px boxu, lazy. <span class="fx">→ WebP, max 2400 px, brez lazy.</span></span></div>
+    </div>
+  </div>
+</section>
+
+<!-- 7 Usage -->
+<section class="slide dark">
+  {{hd}}
+  <div class="split" style="gap:72px">
+    <div>
+      <div class="eyebrow">Uporaba</div>
+      <h2 style="font-size:56px">Pred vsako objavo <em>in predajo</em>.</h2>
+      <div class="pts mt-m">
+        <div style="grid-template-columns:56px 1fr;padding:20px 0"><span class="k">01</span><p>Napišeš <code>/webflow-launch-audit</code> in URL, staging ali produkcijo.</p></div>
+        <div style="grid-template-columns:56px 1fr;padding:20px 0"><span class="k">02</span><p>Po želji poveš, katere strani. Sicer vzame domačo in 5 glavnih.</p></div>
+        <div style="grid-template-columns:56px 1fr;padding:20px 0"><span class="k">03</span><p>Geslo za staging vpišeš sam v Browser panelu.</p></div>
+      </div>
+    </div>
+    <div class="win">
+      <div class="bar"><i></i><i></i><i></i><span>CLAUDE CODE · PRIMER IZPISA</span></div>
+      <div class="body">
+        <div><span class="p">❯</span> <span class="h">/webflow-launch-audit</span> projekt.webflow.io</div>
+        <br>
+        <div><span class="g">✓</span> <span class="c">Webflow MCP: 14 strani, sitemap, skripte</span></div>
+        <div><span class="g">✓</span> <span class="c">axe-core na 5 straneh</span></div>
+        <div><span class="g">✓</span> <span class="c">186 linkov preverjenih</span></div>
+        <div><span class="g">✓</span> <span class="c">42 slik izmerjenih</span></div>
+        <br>
+        <div class="h">## Najprej popravi</div>
+        <div>1. <span class="r">[kritično]</span> Navbar — tipkovnica</div>
+        <div>2. <span class="r">[kritično]</span> /pricing — 404 link</div>
+        <div>3. <span class="y">[pomembno]</span> Hero — 2.4 MB</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 8 Limits -->
+<section class="slide">
+  {{hd}}
+  <div class="eyebrow">Dobro je vedeti</div>
+  <h2>Samo bere. <em>In kje so meje.</em></h2>
+  <div class="row c4 fill" style="display:grid;align-content:center;gap:24px">
+    <div class="feat box"><span class="ic gr">{{i:lock}}</span><h3>Nič ne spreminja</h3><p>Tudi pretvorbo slik v WebP samo predlaga, sam je ne požene.</p></div>
+    <div class="feat box"><span class="ic">{{i:clock}}</span><h3>PageSpeed</h3><p>Samo na javni produkciji. Na stagingu pod geslom ga preskoči.</p></div>
+    <div class="feat box"><span class="ic cy">{{i:link}}</span><h3>Družbena omrežja</h3><p>LinkedIn in X botom vrneta 403, zato so označeni kot nepreverjeni.</p></div>
+    <div class="feat box"><span class="ic rd">{{i:alert}}</span><h3>Še ni preizkušen</h3><p>Prvi zagon naj bo na projektu, ki ga poznamo, da preverimo rezultate.</p></div>
+  </div>
+</section>
+
+</body>
+</html>
